@@ -28,11 +28,16 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
-  },
+    newTodo.id=todoFunctions.generateId();
+    return todos.concat(newTodo);
+    },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
+  return todos.filter(function(curr){
+    return  curr.id!=idToDelete;
+    });
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -46,9 +51,8 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
   },
-  underpants: function(color) {
-    return "Sam is wearing " + color + " boxers today";
-  }
+
+
 };
 
 // Why is this if statement necessary?
