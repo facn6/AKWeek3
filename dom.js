@@ -43,7 +43,7 @@
 
       var description = "?"; // event.target ....
 
-      // hint: todoFunctions.addTodo
+      // hint: todoFunctions.addTodo(state,)
       var newState = []; // ?? change this!
       update(newState);
     });
