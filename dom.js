@@ -15,8 +15,14 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement("li");
-    // you will need to use addEventListener
 
+    var todoSpan = document.createElement("span");
+    todoSpan.innerHTML = todo["description"];
+    todoNode.appendChild(todoSpan);
+
+    // you will need to use addEventListener
+    // console.log("kira", todo);
+    // todoNode.innerHTML = todo["description"];
     // add span holding description
 
     // this adds the delete button
@@ -40,11 +46,16 @@
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-
-      var description = "?"; // event.target ....
+      event.preventDefault();
+      var desc = event.target.description.value; // event.target ....
+      // console.log("hghg", desc);
 
       // hint: todoFunctions.addTodo(state,)
-      var newState = []; // ?? change this!
+      var object = { id: 0, description: "", done: false };
+      object["description"] = desc;
+      // console.log(object);
+      var newState = todoFunctions.addTodo(state, object);
+      // console.log(newState); // ?? change this!
       update(newState);
     });
   }
