@@ -1,0 +1,22 @@
+{
+  "name": "akweek3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dom.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facn6/AKWeek3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facn6/AKWeek3/issues"
+  },
+  "homepage": "https://github.com/facn6/AKWeek3#readme",
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
+}
