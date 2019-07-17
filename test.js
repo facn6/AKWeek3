@@ -74,22 +74,34 @@ test("deleteTodo", function(t) {
   t.end();
 });
 
-// tape('Refactor our addOne function so it is pure.', function(t) {
 
-//   t.equal(addOne(constantNumber), 6, "add one returns argument + 1");
+test("markTodo", function(t) {
+  var newTodos3=[
+  { id: 2, description: "shower", done: true },
+    { id: 3, description: "homework", done: true },
+  { id: 0, description: "tea", done: false }
+];
 
-//   t.equal(constantNumber, 5, "constant number has not been altered");
+  var actual = logic.markTodo(todos, 3);
+  var expected = newTodos3;
+  t.deepEqual(actual, expected, "Should toggle todos 'done' with specified id");
+  t.deepEqual(todos, [
+  { id: 2, description: "shower", done: true },
+  { id: 3, description: "homework", done: false },
+  { id: 0, description: "tea", done: false }
+], "shouldn't change original array");
 
-//   t.equal(addOne(constantNumber), 6,
-//     "Returns the same value when called with the same argument");
+  var actual3 = logic.markTodo(todos, 3);
+  var expected3 = [
+    { id: 2, description: "shower", done: true },
+      { id: 3, description: "homework", done: true },
+    { id: 0, description: "tea", done: false }
+  ];
 
-//   t.equal(addOne(4), 5, 'works for other values');
-
-//   t.equal(addOne(104), 105, 'works for other values');
-
-//   t.equal(addOne(7), 8, 'works for other values');
-
-//   t.equal(addOne(78), 79, 'works for other values');
-
-//   t.end();
-// })
+  t.deepEqual(
+    actual3,
+    expected3,
+    "when run with same arguments it gives the same results"
+  ); //Runs the test one more time to see whether the results stay the same
+  t.end();
+});
