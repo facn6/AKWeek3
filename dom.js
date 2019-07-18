@@ -69,27 +69,22 @@
       // hint: todoFunctions.addTodo(state,)
       var object = { id: 0, description: "", done: false };
       object["description"] = desc;
-      // console.log(object);
+
       var newState = todoFunctions.addTodo(state, object);
-      // console.log(newState); // ?? change this!
+
       update(newState);
       event.target.description.value = "";
     });
   }
 
   var sortButtonNode = document.createElement("button");
-  sortButtonNode.id = "sorted";
+  var newState1;
+  sortButtonNode.value = "Sort";
   sortButtonNode.textContent = "Sort";
+
   sortButtonNode.addEventListener("click", function(event) {
-    if (sortButtonNode.id == "sorted") {
-      sortButtonNode.id = "unsorted";
-      var newState1 = todoFunctions.sortTodos(state);
-    } else {
-      sortButtonNode.id = " sorted";
-      var newState1 = todoFunctions.unsortTodos(state);
-    }
-    update(newState1);
-    console.log("kira", newState1);
+    var get = todoFunctions.button(sortButtonNode, state);
+    update(get);
   });
   container.appendChild(sortButtonNode);
 
