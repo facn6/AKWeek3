@@ -47,12 +47,10 @@ var todoFunctions = {
     var arraycopy = todoFunctions.cloneArrayOfObjects(todos);
     return arraycopy.map(function(curr) {
       if (curr.id == idToMark) {
-        if (curr.done == true) curr.done = false;
-        else {
-          curr.done = true;
-        }
+        curr.done = !curr.done;
         return curr;
-      } else {
+      }
+      else {
         return curr;
       }
     });
