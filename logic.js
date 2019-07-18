@@ -59,6 +59,7 @@ var todoFunctions = {
   },
 
   sortTodos: function(todos) {
+    console.log("HERE1:", todos);
     var arraycopy1 = todoFunctions.cloneArrayOfObjects(todos);
     return arraycopy1.sort(function(a, b) {
       return b.done - a.done;
@@ -71,10 +72,24 @@ var todoFunctions = {
   },
 
   unsortTodos: function(todos) {
+    console.log("HERE:", todos);
     var arraycopy1 = todoFunctions.cloneArrayOfObjects(todos);
     return arraycopy1.sort(function(a, b) {
       return a.id - b.id;
     });
+  },
+
+  button: function(button, state) {
+    if (button.value == "Sort") {
+      newState1 = todoFunctions.sortTodos(state);
+      button.value = "Unsort";
+      button.textContent = "Unsort";
+    } else {
+      newState1 = todoFunctions.unsortTodos(state);
+      button.value = "Sort";
+      button.textContent = "Sort";
+    }
+    return newState1;
   }
 };
 
