@@ -28,15 +28,15 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
-    newTodo.id=todoFunctions.generateId();
+    newTodo.id = todoFunctions.generateId();
     return todos.concat(newTodo);
-    },
+  },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
-  return todos.filter(function(curr){
-    return  curr.id!=idToDelete;
+    return todos.filter(function(curr) {
+      return curr.id != idToDelete;
     });
   },
   markTodo: function(todos, idToMark) {
@@ -44,32 +44,38 @@ var todoFunctions = {
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
-  var arraycopy= todoFunctions.cloneArrayOfObjects(todos);
-    return arraycopy.map(function(curr)
-    {
-  if(curr.id==idToMark)
-  {
-    if(curr.done==true)
-    curr.done=false
-    else {
-      curr.done=true;
-    }
-    return curr;
-  }
-  else {
-    return curr;
-  }
-
+    var arraycopy = todoFunctions.cloneArrayOfObjects(todos);
+    return arraycopy.map(function(curr) {
+      if (curr.id == idToMark) {
+        if (curr.done == true) curr.done = false;
+        else {
+          curr.done = true;
+        }
+        return curr;
+      } else {
+        return curr;
+      }
     });
   },
-  sortTodos: function(todos, sortFunction) {
+
+  sortTodos: function(todos) {
+    var arraycopy1 = todoFunctions.cloneArrayOfObjects(todos);
+    return arraycopy1.sort(function(a, b) {
+      return b.done - a.done;
+    });
+
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
   },
 
-
+  unsortTodos: function(todos) {
+    var arraycopy1 = todoFunctions.cloneArrayOfObjects(todos);
+    return arraycopy1.sort(function(a, b) {
+      return a.id - b.id;
+    });
+  }
 };
 
 // Why is this if statement necessary?
