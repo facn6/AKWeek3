@@ -1,12 +1,13 @@
-
 body {
-  background-color: 		#FA8072;
-display: flex;
-align-content: center;
+  background-color: #fa8072;
+  display: flex;
+  align-content: center;
 }
 
-#add-todo{
+#add-todo {
   align-content: center;
-
-
+}
+.marked {
+  text-decoration: line-through;
+  color: blue;
 }
