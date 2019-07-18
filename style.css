@@ -35,9 +35,9 @@ ul li:hover {
   background: rgba(0,0,0,0.3);
 }
 button{
-  width:4%;
+  width:50%;
   height:1.5rem;
-  background-color:white;
+  color:black;
   margin-left: 1rem;
 }
 
@@ -111,38 +111,53 @@ ul li:hover {
   background: rgba(0,0,0,0.3);
 }
 button{
-  width:4%;
+  width:10%;
   height:1.5rem;
   background-color:white;
   margin-left: 1rem;
+  font-weight:bold;
 }
 
 #add-todo{
 
 margin-left: 20rem;
 margin-top: 6rem;
-
 }
-input
+
+.marked {
+  text-decoration: line-through;
+  color: black;
+}
+
+input[type=text]
 {
 margin: 0;
   border: none;
   border-radius: 0;
-  width: 55%;
+  width: 45%;
   padding: 10px;
   float: left;
   font-size: 25px;
-  margin-left: 3rem;
+  margin-left: 4rem;
+  margin-top: -8rem;
 }
 input[type=submit]
 {
 background-color: black;
 color:white;
 font-size: 2rem;
-
-
+margin:-150px 10px 100px 400px;
+  width: 45%;
+  height:70%;
 }
 #todo-container{
 margin-top: 4rem;
-margin-left: 33rem;
+margin-left: 28rem;
+}
+
+#sorted{
+  background-color: white;
+  margin-left: 25rem;
+  margin-top:5rem;
+  height:2rem;
 }
